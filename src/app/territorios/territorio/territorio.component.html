@@ -1,0 +1,33 @@
+<form #territorioForm="ngForm" (ngSubmit)="onSubmit(territorioForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="territorioService.selectedTerritorio.$key">
+  <div class="form-group">
+    <label>Nome do Território</label>
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="territorioService.selectedTerritorio.name" placeholder="Nome"
+      required>
+  </div>
+  <div class="form-group">
+    <label>Position GPS</label>
+    <input class="form-control" name="gps" #gps="ngModel" [(ngModel)]="territorioService.selectedTerritorio.gps" placeholder="Posição GPS">
+  </div>
+  <div class="form-group">
+    <label>grupo</label>
+    <input class="form-control" name="grupo" #grupo="ngModel" [(ngModel)]="territorioService.selectedTerritorio.grupo" placeholder="grupo">
+  </div>
+  <div class="form-group">
+    <label>Salary</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-dollar"></i>
+      </div>
+      <input class="form-control" name="dataConclusao" #dataConclusao="ngModel" [(ngModel)]="territorioService.selectedTerritorio.dataConclusao" placeholder="Salary">
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default" type="submit" [disabled]="!territorioForm.valid">
+      <i class="fa fa-floppy-o"></i>
+      Enviar</button>
+    <button class="btn btn-default" type="button" (click)="resetForm(territorioForm)">
+      <i class="fa fa-repeat"></i>
+      Limpar</button>
+  </div>
+</form>
