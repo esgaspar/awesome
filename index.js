@@ -7,3 +7,5 @@ express()
   .set('views', path.join(__dirname, 'src/territorios'))
   .get('/*', (req, res) => res.render('src/index'))
   .listen(process.env.PORT || 8080);
+
+  console.log('__dirname'+__dirname);
