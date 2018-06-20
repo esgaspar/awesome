@@ -6,7 +6,7 @@ import { Territorio} from './territorio.model';
 export class TerritorioService {
   territorioList: AngularFireList<any>;
   selectedTerritorio: Territorio = new Territorio();
-  constructor(private firebase :AngularFireDatabase ) { }
+  constructor(public firebase :AngularFireDatabase ) { }
 
   getData(){
     this.territorioList = this.firebase.list('territorios');
