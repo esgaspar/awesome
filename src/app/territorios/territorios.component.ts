@@ -8,7 +8,7 @@ import { TerritorioService } from './shared/territorio.service'
 })
 export class TerritoriosComponent implements OnInit {
 
-  constructor(private territorioService: TerritorioService) { }
+  constructor(public territorioService: TerritorioService) { }
 
   ngOnInit() {
   }

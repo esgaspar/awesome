@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TerritorioListComponent implements OnInit {
   territorioList: Territorio[];
-  constructor(private territorioService: TerritorioService, private tostr: ToastrService) { }
+  constructor(public territorioService: TerritorioService, public tostr: ToastrService) { }
 
   ngOnInit() {
     var x = this.territorioService.getData();

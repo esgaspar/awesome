@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TerritorioComponent implements OnInit {
 
-  constructor(private territorioService: TerritorioService, private tostr: ToastrService) { }
+  constructor(public territorioService: TerritorioService, public tostr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
