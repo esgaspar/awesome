@@ -1,24 +1,18 @@
-var http = require('http')
-    ,app = require('./config/express')
-    db = require('./config/database');
+//Install express server
+const express = require('express');
+const path = require('path');
 
-http.createServer(app).listen(8080, function() {
-    console.log('Servidor estutando na porta: ' + this.address().port);
+const app = express();
+
+// Serve only the static files form the dist directory
+// app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname));
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'index.html'));
+
 });
 
-var express = require('express');
-var app = express();
-
-app.use(express.static(__dirname + '/dist'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('app');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
+//teste
